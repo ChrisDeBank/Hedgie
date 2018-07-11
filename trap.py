@@ -4,18 +4,31 @@
 #PIR output connected to GPIO4 (Physical Pin 7)
 
 from picamera import PiCamera
-from time import sleep
+import time
 from gpiozero import MotionSensor
 
 pir = MotionSensor(4)
 camera = PiCamera()
+camera.resolution(640,480)
 
-pir.wait_for_motion()
-print("Motion Detected!!")
+file_name = 'foo.h264'
 
-camera.rotation = 180
-camera.start_preview()
-sleep(10)
-camera.stop_preview()
+#pir.wait_for_motion()
+#print("Motion Detected!!")
+
+#camera.rotation = 180
+#camera.start_preview()
+#sleep(10)
+#camera.stop_preview()
 
 #camera.capture('foo.jpg')
+
+pir.wait_for_motion()
+camera.start_recording(file_name)
+camera.wait_recording(60)
+camera.stop_recording()
+
+file_name = time.strftime("%y%m%d") + time.strftime("%H%M%S") + ".h264"
+print(file_name)
+
+#while(True)
