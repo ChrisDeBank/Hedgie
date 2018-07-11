@@ -9,7 +9,7 @@ from gpiozero import MotionSensor
 
 pir = MotionSensor(4)
 camera = PiCamera()
-camera.resolution(640,480)
+#camera.resolution(640,480)
 
 file_name = 'foo.h264'
 
