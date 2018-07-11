@@ -29,8 +29,6 @@ while(True)
 	camera.start_recording(file_name)
 	camera.wait_recording(60)
 	camera.stop_recording()
-
+	time.sleep(30)
 
 #print(file_name)
-
-
