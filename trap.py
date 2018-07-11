@@ -23,12 +23,14 @@ file_name = 'foo.h264'
 
 #camera.capture('foo.jpg')
 
-pir.wait_for_motion()
-camera.start_recording(file_name)
-camera.wait_recording(60)
-camera.stop_recording()
+while(True)
+	pir.wait_for_motion()
+	file_name = time.strftime("%y%m%d") + "_" + time.strftime("%H%M%S") + ".h264"
+	camera.start_recording(file_name)
+	camera.wait_recording(60)
+	camera.stop_recording()
 
-file_name = time.strftime("%y%m%d") + time.strftime("%H%M%S") + ".h264"
-print(file_name)
 
-#while(True)
+#print(file_name)
+
+
