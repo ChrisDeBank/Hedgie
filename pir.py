@@ -2,7 +2,7 @@
 # PIR Test Bed
 #-------------------------------------------------------------------------------
 
-#PIR output connected to GPIO2 (Physical Pin 3)
+#PIR output connected to GPIO4 (Physical Pin 7)
 
 from gpiozero import MotionSensor
 
